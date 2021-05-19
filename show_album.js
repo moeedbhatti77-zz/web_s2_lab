@@ -6,7 +6,6 @@ $(function () {
 
         title = $('#title').val();
         val = {userId : id[1],title : title};
-        // console.log(val);
         $.ajax({
             method : 'POST',
             url: "https://jsonplaceholder.typicode.com/albums?userId="+id[1],
