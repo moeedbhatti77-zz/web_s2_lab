@@ -5,14 +5,18 @@ $(function () {
     $('.add_ablum').click(function(){
 
         title = $('#title').val();
-        val = {userId : "1",title : "hello world"};
+        val = {userId : id[1],title : title};
+        // console.log(val);
         $.ajax({
             method : 'POST',
             url: "https://jsonplaceholder.typicode.com/albums?userId="+id[1],
             data: val,
-            // success: function (response) {
-            //     console.log(response);
-            // }
+            success: function (response) {
+                $('#title').val('');
+                $('#t_body').append("<tr><td>"+response.id+"</td><td>"+response.title+"</td><td><button data-id="+response.id+" class='btn btn-primary update')'>Update</button></td><td><button data-id="+response.id+" class='btn btn-primary del' onclick='del("+response.id+")'>Delete</button></td></tr>");
+
+                //console.log(response);
+            }
         });
     });
 });

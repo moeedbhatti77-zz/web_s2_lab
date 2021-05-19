@@ -17,7 +17,13 @@ function show_users(){
                     {
                         alert('Cannot enter empty value');
                     }else if (person != null) {
-                        tr[1].innerText = person;
+                        if(person.search('@')>=0 && person.search('.')>=0)
+                            {
+                                tr[1].innerText = person;
+                            }else
+                                {
+                                    alert('Enetred Text is Not Email');   
+                                }
                     }
                 }
             });
