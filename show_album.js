@@ -14,8 +14,6 @@ $(function () {
             success: function (response) {
                 $('#title').val('');
                 $('#t_body').append("<tr><td>"+response.id+"</td><td>"+response.title+"</td><td><button data-id="+response.id+" class='btn btn-primary update')'>Update</button></td><td><button data-id="+response.id+" class='btn btn-primary del' onclick='del("+response.id+")'>Delete</button></td></tr>");
-
-                //console.log(response);
             }
         });
     });
